@@ -19,6 +19,7 @@
         text-align: center;
         font-size: 30px;
         line-height: 66px;
+        font-family: Arial;
         /*margin: auto;*/
       }
       .container {
@@ -160,7 +161,7 @@
         background-color: #fff;
         border: 3px solid #5BA3D6;
         position: absolute;
-        bottom: 88px;
+        bottom: 95px;
         right: 129px;
         height: 160px;
         width: 75px;
@@ -170,25 +171,25 @@
       #size-left:hover + .large-popup-box {
         opacity: 1;
         bottom: 68px;
-        transition: bottom 0.1s;
+        transition: bottom 0.2s ease;
       }
 
       #size-middle:hover + .large-popup-box {
         opacity: 1;
         bottom: 68px;
-        transition: bottom 0.1s;
+        transition: bottom 0.2s ease;
       }
 
       #size-right:hover + .large-popup-box {
         opacity: 1;
         bottom: 68px;
-        transition: bottom 0.1s;
+        transition: bottom 0.2s ease;
       }
 
       .shirt-sizes {
         /*display: inline-block;*/
         /*padding: 100px;*/
-        margin: 6px 0px 5px;
+        margin: 7px 0px 5px;
       }
 
       .small-popup-box {
@@ -196,10 +197,61 @@
         border: 3px solid #5BA3D6;
         background-color: #fff;
         position: absolute;
-        bottom: 88px;
-        right: 60px;
-        height: 75px;
-        width: 75px;
+        bottom: 95px;
+        right: 58px;
+        height: 80px;
+        width: 80px;
+      }
+
+      .color-blocks {
+        display: inline-block;
+        /*box-sizing: border-box;*/
+        /*border: 1px solid red;*/
+        height: 30px;
+        width: 30px;
+        margin: 4px;
+        /*background-color: blue;*/
+      }
+
+
+      .blue-popup-box {
+        display: inline-block;
+        box-sizing: border-box;
+        /*border: 1px solid red;*/
+        height: 30px;
+        width: 30px;
+        margin: 8px 0 0 8px;
+        background-color: #5BA3D6;
+      }
+
+      .pink-popup-box {
+        display: inline-block;
+        box-sizing: border-box;
+        /*border: 1px solid red;*/
+        height: 30px;
+        width: 30px;
+        margin: 8px 8px 0 0;
+        background-color: #E774A9;
+      }
+
+      .orange-popup-box {
+        display: inline-block;
+        box-sizing: border-box;
+        /*border: 1px solid red;*/
+        height: 30px;
+        width: 30px;
+        margin: 0 0 8px 8px;
+        background-color: #E5B173;
+      }
+
+      .green-popup-box {
+        display: inline-block;
+        box-sizing: border-box;
+        /*border: 1px solid red;*/
+        height: 30px;
+        width: 30px;
+        margin: 0 8px 8px 0;
+        background-color: #8BB992;
       }
 
       i {
@@ -213,7 +265,7 @@
       #color-left:hover + .small-popup-box {
         opacity: 1;
         bottom: 68px;
-        transition: bottom 0.1s;
+        transition: bottom 0.2s ease;
       }
 
       #color-left:hover > .blue-block {
@@ -224,7 +276,7 @@
       #color-middle:hover + .small-popup-box {
         opacity: 1;
         bottom: 68px;
-        transition: bottom 0.1s;
+        transition: bottom 0.2s ease;
       }
 
       #color-middle:hover > .pink-block {
@@ -235,7 +287,7 @@
       #color-right:hover + .small-popup-box {
         opacity: 1;
         bottom: 68px;
-        transition: bottom 0.1s;
+        transition: bottom 0.2s ease;
       }
 
       #color-right:hover > .orange-block {
@@ -271,7 +323,12 @@
         <div class="inner-box" id="color-left">
           <div class="blue-block"></div>
         </div>
-        <div class="small-popup-box"></div>
+        <div class="small-popup-box">
+          <div class="blue-popup-box"></div>
+          <div class="pink-popup-box"></div>
+          <div class="orange-popup-box"></div>
+          <div class="green-popup-box"></div>
+        </div>
         <div class="inner-box"><i class="fa fa-shopping-cart fa-2x"></i></div>
         <p class="description-price">Save my trees</p>
       </div>
@@ -298,7 +355,12 @@
         <div class="inner-box" id="color-middle">
           <div class="pink-block"></div>
         </div>
-        <div class="small-popup-box"></div>
+        <div class="small-popup-box">
+          <div class="blue-popup-box"></div>
+          <div class="pink-popup-box"></div>
+          <div class="orange-popup-box"></div>
+          <div class="green-popup-box"></div>
+        </div>
         <div class="inner-box"><i class="fa fa-shopping-cart fa-2x"></i></div>
         test
       </div>
@@ -324,7 +386,12 @@
         <div class="inner-box" id="color-right">
           <div class="orange-block"></div>
         </div>
-        <div class="small-popup-box"></div>
+        <div class="small-popup-box">
+          <div class="blue-popup-box"></div>
+          <div class="pink-popup-box"></div>
+          <div class="orange-popup-box"></div>
+          <div class="green-popup-box"></div>
+        </div>
         <div class="inner-box"><i class="fa fa-shopping-cart fa-2x"></i></div>
       </div>
     </div>
