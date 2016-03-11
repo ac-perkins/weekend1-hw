@@ -162,10 +162,34 @@
         border: 3px solid #5BA3D6;
         position: absolute;
         bottom: 95px;
-        right: 129px;
+        right: 128px;
         height: 160px;
         width: 75px;
         text-align: center;
+        z-index: 1;
+      }
+
+      .size-curtain {
+        /*border: 3px solid red;*/
+        background-color: white;
+        height: 50px;
+        width: 70px;
+        position: absolute;
+        top: 110px;
+        right: 5px;
+        z-index: -1;
+      }
+
+      .size-triangle-popup {
+        border: 3px solid #5BA3D6;
+        background-color: #fff;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 122px;
+        right: 15px;
+        transform: rotate(45deg);
+        z-index: -1;
       }
 
       #size-left:hover + .large-popup-box {
@@ -198,9 +222,32 @@
         background-color: #fff;
         position: absolute;
         bottom: 95px;
-        right: 58px;
-        height: 80px;
-        width: 80px;
+        right: 57px;
+        height: 81px;
+        width: 81px;
+        z-index: 1;
+      }
+
+      .color-curtain {
+        background-color: #fff;
+        height: 50px;
+        width: 70px;
+        position: absolute;
+        top: 31px;
+        right: 5px;
+        z-index: -1;
+      }
+
+      .color-triangle-popup {
+        border: 3px solid #5BA3D6;
+        background-color: #fff;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 43px;
+        right: 18px;
+        transform: rotate(45deg);
+        z-index: -1;
       }
 
       .color-blocks {
@@ -222,6 +269,7 @@
         width: 30px;
         margin: 8px 0 0 8px;
         background-color: #5BA3D6;
+        z-index: 5;
       }
 
       .pink-popup-box {
@@ -232,6 +280,7 @@
         width: 30px;
         margin: 8px 8px 0 0;
         background-color: #E774A9;
+        z-index: 5;
       }
 
       .orange-popup-box {
@@ -242,6 +291,7 @@
         width: 30px;
         margin: 0 0 8px 8px;
         background-color: #E5B173;
+        z-index: 5;
       }
 
       .green-popup-box {
@@ -252,6 +302,7 @@
         width: 30px;
         margin: 0 8px 8px 0;
         background-color: #8BB992;
+        z-index: 5;
       }
 
       i {
@@ -315,6 +366,8 @@
         <div class="inner-box"><i class="fa fa-heart-o fa-2x"></i></div>
         <div class="inner-box" id="size-left"><h2>XL</h2></div>
         <div class="large-popup-box">
+          <div class="size-triangle-popup"></div>
+          <div class="size-curtain"></div>
           <div class="shirt-sizes"><i class="fa fa-users fa-2x"></i></div>
           <div class="shirt-sizes"><i class="fa fa-user-secret fa-2x"></i></div>
           <div class="shirt-sizes"><i class="fa fa-user-plus fa-2x"></i></div>
@@ -324,6 +377,8 @@
           <div class="blue-block"></div>
         </div>
         <div class="small-popup-box">
+          <div class="color-triangle-popup"></div>
+          <div class="color-curtain"></div>
           <div class="blue-popup-box"></div>
           <div class="pink-popup-box"></div>
           <div class="orange-popup-box"></div>
@@ -347,6 +402,8 @@
         <div class="inner-box"><i class="fa fa-heart-o fa-2x"></i></div>
         <div class="inner-box"  id="size-middle"><h2>XL</h2></div>
         <div class="large-popup-box">
+          <div class="size-triangle-popup"></div>
+          <div class="size-curtain"></div>
           <div class="shirt-sizes"><i class="fa fa-users fa-2x"></i></div>
           <div class="shirt-sizes"><i class="fa fa-user-secret fa-2x"></i></div>
           <div class="shirt-sizes"><i class="fa fa-user-plus fa-2x"></i></div>
@@ -356,6 +413,8 @@
           <div class="pink-block"></div>
         </div>
         <div class="small-popup-box">
+          <div class="color-triangle-popup"></div>
+          <div class="color-curtain"></div>
           <div class="blue-popup-box"></div>
           <div class="pink-popup-box"></div>
           <div class="orange-popup-box"></div>
@@ -378,6 +437,8 @@
         <div class="inner-box"><i class="fa fa-heart-o fa-2x"></i></div>
         <div class="inner-box" id="size-right"><h2>XL</h2></div>
         <div class="large-popup-box">
+          <div class="size-triangle-popup"></div>
+          <div class="size-curtain"></div>
           <div class="shirt-sizes"><i class="fa fa-users fa-2x"></i></div>
           <div class="shirt-sizes"><i class="fa fa-user-secret fa-2x"></i></div>
           <div class="shirt-sizes"><i class="fa fa-user-plus fa-2x"></i></div>
@@ -387,6 +448,8 @@
           <div class="orange-block"></div>
         </div>
         <div class="small-popup-box">
+          <div class="color-triangle-popup"></div>
+          <div class="color-curtain"></div>
           <div class="blue-popup-box"></div>
           <div class="pink-popup-box"></div>
           <div class="orange-popup-box"></div>
