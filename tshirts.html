@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>T-shirt shop</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <style type"text/css">
       * {
         margin: 0;
@@ -14,6 +15,10 @@
         /*border: 1px solid black*/
       }
 
+      h2 {
+        text-align: center;
+        margin: auto;
+      }
       .container {
         width: 95%;
         margin: 0 auto;
@@ -70,6 +75,7 @@
         top: 0;
         right: 0;
         color: #5BA3D6;
+        z-index: 2;
       }
 
       .shirt-rotate:hover {
@@ -159,43 +165,62 @@
     </style>
   </head>
   <body>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.19/dist/jquery.flip.min.js"></script>
 
     <div class="container">
       <div class="left-shirt">
-        <div class="shirt-image">
-          <img class="shirt-png" src="http://i.imgur.com/nPNn0Us.png" />
-          <div class="shirt-rotate"><i class="fa fa-undo"></i></div>
+        <div class="shirt-image" id="shirt1">
+          <div class="front">
+            <img class="shirt-png" src="http://i.imgur.com/nPNn0Us.png" />
+          </div>
+          <div class="back">
+            <img class="shirt-png" src="http://i.imgur.com/iskETJ7.png" />
+          </div>
+          <div class="shirt-rotate" id="toggle-left"><i class="fa fa-undo fa-lg"></i></div>
         </div>
         <div class="inner-box"><i class="fa fa-refresh fa-2x"></i></div>
         <div class="inner-box"><i class="fa fa-heart-o fa-2x"></i></div>
-        <div class="inner-box" id="size-left"></div>
-        <div class="large-popup-box"></div>
+        <div class="inner-box" id="size-left"><h2>XL</h2></div>
+        <div class="large-popup-box">
+          <i class="fa fa-users"></i>
+          <i class="fa fa-user"></i>
+        </div>
         <div class="inner-box" id="color-left"></div>
         <div class="small-popup-box"></div>
         <div class="inner-box"><i class="fa fa-shopping-cart fa-2x"></i></div>
-
       </div>
       <div class="middle-shirt">
-        <div class="shirt-image">
-          <img class="shirt-png" src="http://i.imgur.com/pp0COGP.png" />
-          <div class="shirt-rotate"><i class="fa fa-undo"></i></div>
+        <div class="shirt-image" id="shirt2">
+          <div class="front">
+            <img class="shirt-png" src="http://i.imgur.com/pp0COGP.png" />
+          </div>
+          <div class="back">
+            <img class="shirt-png" src="http://i.imgur.com/eCd87XR.png" />
+          </div>
+          <div class="shirt-rotate" id="toggle-middle"><i class="fa fa-undo fa-lg"></i></div>
         </div>
         <div class="inner-box"><i class="fa fa-refresh fa-2x"></i></div>
         <div class="inner-box"><i class="fa fa-heart-o fa-2x"></i></div>
-        <div class="inner-box"  id="size-middle"></div>
+        <div class="inner-box"  id="size-middle"><h2>XL</h2></div>
         <div class="large-popup-box"></div>
         <div class="inner-box" id="color-middle"></div>
         <div class="small-popup-box"></div>
         <div class="inner-box"><i class="fa fa-shopping-cart fa-2x"></i></div>
       </div>
       <div class="right-shirt">
-        <div class="shirt-image">
-          <img class="shirt-png" src="http://i.imgur.com/4tZdzGj.png" />
-          <div class="shirt-rotate"><i class="fa fa-undo"></i></div>
+        <div class="shirt-image" id="shirt3">
+          <div class="front">
+            <img class="shirt-png" src="http://i.imgur.com/4tZdzGj.png" />
+          </div>
+          <div class="back">
+            <img class="shirt-png" src="http://i.imgur.com/FyyLnOg.png" />
+          </div>
+          <div class="shirt-rotate" id="toggle-right"><i class="fa fa-undo fa-lg"></i></div>
         </div>
         <div class="inner-box"><i class="fa fa-refresh fa-2x"></i></div>
         <div class="inner-box"><i class="fa fa-heart-o fa-2x"></i></div>
-        <div class="inner-box" id="size-right"></div>
+        <div class="inner-box" id="size-right"><h2>XL</h2></div>
         <div class="large-popup-box"></div>
         <div class="inner-box" id="color-right"></div>
         <div class="small-popup-box"></div>
@@ -203,6 +228,32 @@
       </div>
     </div>
 
+    <script type="text/javascript">
+
+    $("#shirt1").flip({
+      trigger: 'manual'
+    });
+
+    $("#toggle-left").click(function(){
+      $("#shirt1").flip('toggle');
+    });
+
+    $("#shirt2").flip({
+      trigger: 'manual'
+    });
+
+    $("#toggle-middle").click(function(){
+      $("#shirt2").flip('toggle');
+    });
+
+    $("#shirt3").flip({
+      trigger: 'manual'
+    });
+
+    $("#toggle-right").click(function(){
+      $("#shirt3").flip('toggle');
+    });
+    </script>
 
   </body>
 </html>
