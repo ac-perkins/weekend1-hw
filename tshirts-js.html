@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>T-shirt shop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <style type"text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        color: #5BA3D6;
+        font-family: Verdana;
+        font-size: 30px;
+        display: inline-block;
+        margin-top: 18px;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 30px;
+        line-height: 66px;
+        font-family: Arial;
+      }
+      .container {
+        width: 95%;
+        margin: 20px auto;
+      }
+
+      .left-shirt {
+        position: relative;
+        border: 3px solid #5BA3D6;
+        display: inline-block;
+        height: 400px;
+        width: 340px;
+        margin: 10px 20px;
+      }
+
+      .middle-shirt {
+        position: relative;
+        border: 3px solid #5BA3D6;
+        display: inline-block;
+        height: 400px;
+        width: 340px;
+        margin: 10px 20px;
+      }
+
+      .right-shirt {
+        position: relative;
+        border: 3px solid #5BA3D6;
+        display: inline-block;
+        height: 400px;
+        width: 340px;
+        margin: 10px 20px;
+      }
+
+      .shirt-image {
+        position: relative;
+        box-sizing: border-box;
+        float: left;
+        height: 332px;
+        width: 340px;
+      }
+
+      .shirt-png {
+        width: 85%;
+        margin: 8%;
+      }
+
+      .shirt-rotate {
+        position: absolute;
+        border-left: 3px solid #5BA3D6;
+        border-bottom: 3px solid #5BA3D6;
+        box-sizing: border-box;
+        float: right;
+        width: 35px;
+        height: 35px;
+        top: 0;
+        right: 0;
+        color: #5BA3D6;
+        z-index: 2;
+        text-align: center;
+        line-height: 35px;
+      }
+
+      .shirt-rotate:hover {
+        background-color: #5BA3D6;
+        color: #fff;
+      }
+
+
+      .inner-box {
+        position: relative;
+        border-top: 3px solid #5BA3D6;
+        border-left: 3px solid #5BA3D6;
+        float: left;
+        box-sizing: border-box;
+        height: 68px;
+        width: 68px;
+        color: #5BA3D6;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .first-inner-box {
+        border-top: 3px solid #5BA3D6;
+        float: left;
+        box-sizing: border-box;
+        height: 68px;
+        width: 68px;
+        color: #5BA3D6;
+        text-align: center;
+        line-height: 80px;
+      }
+
+      .first-inner-box:hover {
+        background-color: #5BA3D6;
+        color: #fff;
+      }
+
+      .inner-box:hover {
+        background-color: #5BA3D6;
+        color: #fff;
+      }
+
+      .blue-block {
+        background-color: #5BA3D6;
+        height: 30px;
+        width: 30px;
+        margin: 18px auto;
+      }
+
+      .pink-block {
+        background-color: #E774A9;
+        height: 30px;
+        width: 30px;
+        margin: 18px auto;
+      }
+
+      .orange-block {
+        background-color: #E5B173;
+        height: 30px;
+        width: 30px;
+        margin: 18px auto;
+      }
+
+      .large-popup-box {
+        opacity: 0;
+        color: #5BA3D6;
+        background-color: #fff;
+        border: 3px solid #5BA3D6;
+        position: absolute;
+        bottom: 95px;
+        right: 128px;
+        height: 160px;
+        width: 75px;
+        text-align: center;
+        z-index: 1;
+      }
+
+      .size-curtain {
+        background-color: white;
+        height: 50px;
+        width: 70px;
+        position: absolute;
+        top: 110px;
+        right: 5px;
+        z-index: -1;
+      }
+
+      .size-triangle-popup {
+        border: 3px solid #5BA3D6;
+        background-color: #fff;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 122px;
+        right: 15px;
+        transform: rotate(45deg);
+        z-index: -1;
+      }
+
+      #size-left:hover + .large-popup-box {
+        opacity: 1;
+        bottom: 68px;
+        transition: bottom 0.2s ease;
+      }
+
+      #size-middle:hover + .large-popup-box {
+        opacity: 1;
+        bottom: 68px;
+        transition: bottom 0.2s ease;
+      }
+
+      #size-right:hover + .large-popup-box {
+        opacity: 1;
+        bottom: 68px;
+        transition: bottom 0.2s ease;
+      }
+
+      .shirt-sizes {
+        margin: 7px 0px 5px;
+      }
+
+      .small-popup-box {
+        opacity: 0;
+        border: 3px solid #5BA3D6;
+        background-color: #fff;
+        position: absolute;
+        bottom: 95px;
+        right: 57px;
+        height: 81px;
+        width: 81px;
+        z-index: 1;
+      }
+
+      .color-curtain {
+        background-color: #fff;
+        height: 50px;
+        width: 70px;
+        position: absolute;
+        top: 31px;
+        right: 5px;
+        z-index: -1;
+      }
+
+      .color-triangle-popup {
+        border: 3px solid #5BA3D6;
+        background-color: #fff;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 43px;
+        right: 18px;
+        transform: rotate(45deg);
+        z-index: -1;
+      }
+
+      .color-blocks {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        margin: 4px;
+      }
+
+
+      .blue-popup-box {
+        display: inline-block;
+        box-sizing: border-box;
+        height: 30px;
+        width: 30px;
+        margin: 8px 0 0 8px;
+        background-color: #5BA3D6;
+        z-index: 5;
+      }
+
+      .pink-popup-box {
+        display: inline-block;
+        box-sizing: border-box;
+        height: 30px;
+        width: 30px;
+        margin: 8px 8px 0 0;
+        background-color: #E774A9;
+        z-index: 5;
+      }
+
+      .orange-popup-box {
+        display: inline-block;
+        box-sizing: border-box;
+        height: 30px;
+        width: 30px;
+        margin: 0 0 8px 8px;
+        background-color: #E5B173;
+        z-index: 5;
+      }
+
+      .green-popup-box {
+        display: inline-block;
+        box-sizing: border-box;
+        height: 30px;
+        width: 30px;
+        margin: 0 8px 8px 0;
+        background-color: #8BB992;
+        z-index: 5;
+      }
+
+      #color-left:hover + .small-popup-box {
+        opacity: 1;
+        bottom: 68px;
+        transition: bottom 0.2s ease;
+      }
+
+      #color-left:hover > .blue-block {
+        border: 2px solid #fff;
+        margin: 17px auto;
+      }
+
+      #color-middle:hover + .small-popup-box {
+        opacity: 1;
+        bottom: 68px;
+        transition: bottom 0.2s ease;
+      }
+
+      #color-middle:hover > .pink-block {
+        border: 2px solid #fff;
+        margin: 17px auto;
+      }
+
+      #color-right:hover + .small-popup-box {
+        opacity: 1;
+        bottom: 68px;
+        transition: bottom 0.2s ease;
+      }
+
+      #color-right:hover > .orange-block {
+        border: 2px solid #fff;
+        margin: 17px auto;
+      }
+
+      .price {
+        float: right;
+        font-weight: bold;
+      }
+
+      .front {
+        height: 100%;
+        width: 100%;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        position: absolute;
+        z-index: 1;
+        transition: all 0.5s ease-out;
+        transform: rotateY(0deg);
+      }
+
+      .back {
+        transform: rotateY(-180deg);
+        height: 100%;
+        width: 100%;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        position: absolute;
+        z-index: 0;
+        transition: all 0.5s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.19/dist/jquery.flip.min.js"></script> -->
+
+    <div class="container">
+      <div class="left-shirt">
+        <div class="shirt-image" id="shirt1">
+          <div class="front" id="front_left">
+            <img class="shirt-png" src="http://i.imgur.com/nPNn0Us.png" />
+          </div>
+          <div class="back" id="back_left">
+            <img class="shirt-png" src="http://i.imgur.com/iskETJ7.png" />
+          </div>
+          <div class="shirt-rotate" id="toggle-left"><i class="fa fa-undo fa-lg"></i></div>
+        </div>
+        <div class="first-inner-box"><i class="fa fa-refresh fa-2x"></i></div>
+        <div class="inner-box"><i class="fa fa-heart-o fa-2x"></i></div>
+        <div class="inner-box" id="size-left"><h2>XL</h2></div>
+        <div class="large-popup-box">
+          <div class="size-triangle-popup"></div>
+          <div class="size-curtain"></div>
+          <div class="shirt-sizes"><i class="fa fa-users fa-2x"></i></div>
+          <div class="shirt-sizes"><i class="fa fa-user-secret fa-2x"></i></div>
+          <div class="shirt-sizes"><i class="fa fa-user-plus fa-2x"></i></div>
+          <div class="shirt-sizes"><i class="fa fa-user fa-2x"></i></div>
+        </div>
+        <div class="inner-box" id="color-left">
+          <div class="blue-block"></div>
+        </div>
+        <div class="small-popup-box">
+          <div class="color-triangle-popup"></div>
+          <div class="color-curtain"></div>
+          <div class="blue-popup-box"></div>
+          <div class="pink-popup-box"></div>
+          <div class="orange-popup-box"></div>
+          <div class="green-popup-box"></div>
+        </div>
+        <div class="inner-box"><i class="fa fa-shopping-cart fa-2x"></i></div>
+        <p>Save my trees</p><p class="price">$29</p>
+      </div>
+      <div class="middle-shirt">
+        <div class="shirt-image" id="shirt2">
+          <div class="front" id="front_middle">
+            <img class="shirt-png" src="http://i.imgur.com/pp0COGP.png" />
+          </div>
+          <div class="back" id="back_middle">
+            <img class="shirt-png" src="http://i.imgur.com/eCd87XR.png" />
+          </div>
+          <div class="shirt-rotate" id="toggle-middle"><i class="fa fa-undo fa-lg"></i></div>
+        </div>
+        <div class="first-inner-box"><i class="fa fa-refresh fa-2x"></i></div>
+        <div class="inner-box"><i class="fa fa-heart-o fa-2x"></i></div>
+        <div class="inner-box"  id="size-middle"><h2>XL</h2></div>
+        <div class="large-popup-box">
+          <div class="size-triangle-popup"></div>
+          <div class="size-curtain"></div>
+          <div class="shirt-sizes"><i class="fa fa-users fa-2x"></i></div>
+          <div class="shirt-sizes"><i class="fa fa-user-secret fa-2x"></i></div>
+          <div class="shirt-sizes"><i class="fa fa-user-plus fa-2x"></i></div>
+          <div class="shirt-sizes"><i class="fa fa-user fa-2x"></i></div>
+        </div>
+        <div class="inner-box" id="color-middle">
+          <div class="pink-block"></div>
+        </div>
+        <div class="small-popup-box">
+          <div class="color-triangle-popup"></div>
+          <div class="color-curtain"></div>
+          <div class="blue-popup-box"></div>
+          <div class="pink-popup-box"></div>
+          <div class="orange-popup-box"></div>
+          <div class="green-popup-box"></div>
+        </div>
+        <div class="inner-box"><i class="fa fa-shopping-cart fa-2x"></i></div>
+        <p>Nature Lover</p><p class="price">$19</p>
+      </div>
+      <div class="right-shirt">
+        <div class="shirt-image" id="shirt3">
+          <div class="front" id="front_right">
+            <img class="shirt-png" src="http://i.imgur.com/4tZdzGj.png" />
+          </div>
+          <div class="back" id="back_right">
+            <img class="shirt-png" src="http://i.imgur.com/FyyLnOg.png" />
+          </div>
+          <div class="shirt-rotate" id="toggle-right"><i class="fa fa-undo fa-lg"></i></div>
+        </div>
+        <div class="first-inner-box"><i class="fa fa-refresh fa-2x"></i></div>
+        <div class="inner-box"><i class="fa fa-heart-o fa-2x"></i></div>
+        <div class="inner-box" id="size-right"><h2>XL</h2></div>
+        <div class="large-popup-box">
+          <div class="size-triangle-popup"></div>
+          <div class="size-curtain"></div>
+          <div class="shirt-sizes"><i class="fa fa-users fa-2x"></i></div>
+          <div class="shirt-sizes"><i class="fa fa-user-secret fa-2x"></i></div>
+          <div class="shirt-sizes"><i class="fa fa-user-plus fa-2x"></i></div>
+          <div class="shirt-sizes"><i class="fa fa-user fa-2x"></i></div>
+        </div>
+        <div class="inner-box" id="color-right">
+          <div class="orange-block"></div>
+        </div>
+        <div class="small-popup-box">
+          <div class="color-triangle-popup"></div>
+          <div class="color-curtain"></div>
+          <div class="blue-popup-box"></div>
+          <div class="pink-popup-box"></div>
+          <div class="orange-popup-box"></div>
+          <div class="green-popup-box"></div>
+        </div>
+        <div class="inner-box"><i class="fa fa-shopping-cart fa-2x"></i></div>
+        <p>Forrest Walk</p><p class="price">$39</p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var frontLeft = document.getElementById("front_left");
+    var backLeft = document.getElementById("back_left");
+    var left_rotate = document.getElementById("toggle-left");
+    var frontMiddle = document.getElementById("front_middle");
+    var backMiddle = document.getElementById("back_middle");
+    var middle_rotate = document.getElementById("toggle-middle");
+    var frontRight = document.getElementById("front_right");
+    var backRight = document.getElementById("back_right");
+    var right_rotate = document.getElementById("toggle-right");
+
+    left_rotate.addEventListener("click", function() {
+      if (frontLeft.classList.contains("front")) {
+        frontLeft.classList.remove("front");
+        frontLeft.classList.add("back");
+        backLeft.classList.remove("back");
+        backLeft.classList.add("front");
+      }
+      else {
+        frontLeft.classList.remove("back");
+        frontLeft.classList.add("front");
+        backLeft.classList.remove("front");
+        backLeft.classList.add("back");
+      }
+    })
+
+    middle_rotate.addEventListener("click", function() {
+      if (frontMiddle.classList.contains("front")) {
+        frontMiddle.classList.remove("front");
+        frontMiddle.classList.add("back");
+        backMiddle.classList.remove("back");
+        backMiddle.classList.add("front");
+      }
+      else {
+        frontMiddle.classList.remove("back");
+        frontMiddle.classList.add("front");
+        backMiddle.classList.remove("front");
+        backMiddle.classList.add("back");
+      }
+    })
+
+    right_rotate.addEventListener("click", function() {
+      if (frontRight.classList.contains("front")) {
+        frontRight.classList.remove("front");
+        frontRight.classList.add("back");
+        backRight.classList.remove("back");
+        backRight.classList.add("front");
+      }
+      else {
+        frontRight.classList.remove("back");
+        frontRight.classList.add("front");
+        backRight.classList.remove("front");
+        backRight.classList.add("back");
+      }
+
+    })
+    // front.classList.toggle("back_left");
+    // back.classList.toggle("front_left");
+    </script>
+
+  </body>
+</html>
